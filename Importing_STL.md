@@ -72,7 +72,6 @@ Velocity - maximum joint velocity with units m/s for prismatic and rad's per sec
 
 <robot name="roco_arm">
 
-
 <link name="base_link">
 <visual>
   <origin rpy="0 0 0" xyz="0.15 0 0.35"/>
