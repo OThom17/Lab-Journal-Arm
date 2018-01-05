@@ -56,7 +56,10 @@ Origin - The local origin in relation to the member.
 Geometry - Outlines the dimensions of the component. This can be described explicitly written in terms of either rectangular, cylindrical of spherical shapes. Alternatively mesh files can be imported from packages such as fusion 360 or solidworks.
 Material - Purely asthetic property used to degine texture and colour of components.
 
-##Joint Breakdown
+## Joint Breakdown
+
+Listing of the possible variations of settable parameters
+
 Type - Revolute, Continous, prismatic, fixed, floating and planar
 Origin - The global location of the joint at the 'centre' positions of all members.
 Parent - The base element of the joint
@@ -70,13 +73,14 @@ Velocity - maximum joint velocity with units m/s for prismatic and rad's per sec
 
 ## Importing STL Mesh files
 
-To include more complex forms which can't be made through the use of the primary shapes (Rectangles, spheres and squares) meshes can be exported from 3D CAD packages like 360 fusion and solidworks. As the design featured multiple components to each element such as either side of the primary arm member I've used solidworks to combine them into four main sections. 
+To include more complex forms which can't be made through the use of the primary shapes (Rectangles, spheres and squares) meshes can be exported from 3D CAD packages like 360 fusion and solidworks and imported into the model. As the design featured multiple components to each element such as either side of the primary arm member I've used solidworks to merge them into four main sections, these are as follows:
+
 - Base Unit
 - Base Mounting point
 - Primary Arm Section
 - Secondary Arm section
 
-With ROS not supporting a 'snap' positional function this will  simplify the contruction when imported into the model. 
+With ROS not supporting a 'snap' positional function this will simplify the contruction when imported into the model and manually determing the origin points. 
 
 Using the ROS documentation the STL files is included in the model through the use of the following code:
 
@@ -87,7 +91,7 @@ Using the ROS documentation the STL files is included in the model through the u
   
 ```
 
-However the ROS filesystem hasn't been made into a package so the exact filepath has to be described. 
+However the ROS filesystem hasn't been made into a package so the exact filepath has to be described as follows.
 
 ```
 
@@ -172,14 +176,14 @@ However the ROS filesystem hasn't been made into a package so the exact filepath
 </robot>
 
 ```
-In the URDF file above each componenet (link) is referencing a STL mesh. The positional data (origin) has been determined from the original solidworks model as well as using the axis provided by ROS to refine the positions.
+In the URDF file above each component (link) is referencing a STL mesh. The positional data (origin) has been determined from the original solidworks model as well as using the axis provided by ROS to refine the positions.
 
 ## Defining the joint positions and types
 - Origin
-The joint co-ordinates are to be set as if the model is in the central position. These values were roughly determined using the solidworks model but largely are a result of trail and error using the axis provided by ROS. 
+The joint co-ordinates are to be set as if the model is in the central position. These values were roughly determined using the solidworks model but largely are a result of trail and error through the use of the axis provided by ROS. 
 
 - Type
-Both of the arm joints have been set to teh type 'revolute' as they are both rotational and will have defined contraints. The joint connecting the base to the mount however will not be constained and therefore will be of type 'contiunous'.
+Both of the arm joints have been set to the type 'revolute' as they are both rotational and will have defined contraints. The joint connecting the base to the mount however will not be constained and therefore will be of type 'contiunous'.
 
 - Axis
 Both arm joints' 'axis' has been set to 'x' as this is the vertical plane. The mount has therefore been set to 'z' as this will enable horizontal rotation.
@@ -217,6 +221,9 @@ To contrain the rotation of the joints limits have been included. Since the two 
   </joint>
 
 ```
+
+*** URDF has both servo joints with a full 360 degree rotation.
+
 
 
 
