@@ -25,7 +25,7 @@ Stock URDF File
 
 <link name="first_segment">
 <visual>
-<geometry>
+geometry>
 <box size="0.6 0.05 0.1"/>
 </geometry>
 <origin rpy="0 0 0" xyz="-0.3 0 0"/>
@@ -49,29 +49,29 @@ The URDF file is written in XML and is comprised of two components; the links (M
 
 ## The following paramters can be defined for a link:
 
-## Visual Breakdown
+### Visual Breakdown
 
 Inertial: A 3x3 rotational interial matrix descriing how the component will react to motion.
 Origin - The local origin in relation to the member.
 Geometry - Outlines the dimensions of the component. This can be described explicitly written in terms of either rectangular, cylindrical of spherical shapes. Alternatively mesh files can be imported from packages such as fusion 360 or solidworks.
 Material - Purely asthetic property used to degine texture and colour of components.
 
-## Joint Breakdown
+### Joint Breakdown
 
 Listing of the possible variations of settable parameters
 
-Type - Revolute, Continous, prismatic, fixed, floating and planar
-Origin - The global location of the joint at the 'centre' positions of all members.
-Parent - The base element of the joint
-Child - The secondary element.
-Axis - Sets the axis in which the joint will rotate around.
-Limits -  The maximum and miniimum angle of rotation.
-Velocity - maximum joint velocity with units m/s for prismatic and rad's per second for revolute. 
+Type:     Revolute, Continous, prismatic, fixed, floating and planar
+Origin:   The global location of the joint at the 'centre' positions of all members.
+Parent:   The base element of the joint
+Child:    The secondary element.
+Axis:     Sets the axis in which the joint will rotate around.
+Limits:   The maximum and miniimum angle of rotation.
+Velocity: Maximum joint velocity with units m/s for prismatic and rad's per second for revolute. 
 
 
 
 
-## Importing STL Mesh files
+## Importing complex STL Mesh files
 
 To include more complex forms which can't be made through the use of the primary shapes (Rectangles, spheres and squares) meshes can be exported from 3D CAD packages like 360 fusion and solidworks and imported into the model. As the design featured multiple components to each element such as either side of the primary arm member I've used solidworks to merge them into four main sections, these are as follows:
 
