@@ -51,22 +51,22 @@ The URDF file is written in XML and is comprised of two components; the links (M
 
 ### Visual Breakdown
 
-Inertial: A 3x3 rotational interial matrix descriing how the component will react to motion.
-Origin - The local origin in relation to the member.
-Geometry - Outlines the dimensions of the component. This can be described explicitly written in terms of either rectangular, cylindrical of spherical shapes. Alternatively mesh files can be imported from packages such as fusion 360 or solidworks.
-Material - Purely asthetic property used to degine texture and colour of components.
+- Inertial: A 3x3 rotational interial matrix descriing how the component will react to motion.
+- Origin:   The local origin in relation to the member.
+- Geometry: Outlines the dimensions of the component. This can be described explicitly written in terms of either rectangular, cylindrical of spherical shapes. Alternatively mesh files can be imported from packages such as fusion 360 or solidworks.
+- Material: Purely asthetic property used to degine texture and colour of components.
 
 ### Joint Breakdown
 
 Listing of the possible variations of settable parameters
 
-Type:     Revolute, Continous, prismatic, fixed, floating and planar
-Origin:   The global location of the joint at the 'centre' positions of all members.
-Parent:   The base element of the joint
-Child:    The secondary element.
-Axis:     Sets the axis in which the joint will rotate around.
-Limits:   The maximum and miniimum angle of rotation.
-Velocity: Maximum joint velocity with units m/s for prismatic and rad's per second for revolute. 
+- Type:     Revolute, Continous, prismatic, fixed, floating and planar
+- Origin:   The global location of the joint at the 'centre' positions of all members.
+- Parent:   The base element of the joint
+- Child:    The secondary element.
+- Axis:     Sets the axis in which the joint will rotate around.
+- Limits:   The maximum and miniimum angle of rotation.
+- Velocity: Maximum joint velocity with units m/s for prismatic and rad's per second for revolute. 
 
 
 
